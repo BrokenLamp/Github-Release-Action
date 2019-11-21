@@ -7,10 +7,12 @@ description: 'Publish Github releases from an action'
 env:
   GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
 inputs:
-  release:
+  name:
     description: 'The name of the release to publish'
     required: true
-args: ['${{ inputs.release }}']
+  file:
+    description: 'The file to attach to the release'
+args: ['${{ inputs.name }}','{{ inputs.file }}']
 runs:
   using: 'docker'
   image: 'Dockerfile'
