@@ -1,4 +1,5 @@
 #!/bin/bash
 
-MESSAGE=$*
-hub release create -m ${MESSAGE} $(date +%Y%m%d%H%M%S)
+MESSAGE=$1
+FILE=$2
+hub release create -m ${MESSAGE} $(date +%Y%m%d%H%M%S) -a ${FILE}
